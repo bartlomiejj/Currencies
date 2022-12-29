@@ -1,4 +1,4 @@
-package CV.currencies.infrastructure.mongodb;
+package currencies.infrastructure.mongodb;
 
 import lombok.Data;
 import org.bson.types.ObjectId;

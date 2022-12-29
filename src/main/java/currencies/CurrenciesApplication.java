@@ -1,6 +1,6 @@
-package CV.currencies;
+package currencies;
 
-import CV.currencies.infrastructure.provider.ProviderConfig;
+import currencies.infrastructure.provider.ProviderConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class CurrenciesApplication {
+
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();

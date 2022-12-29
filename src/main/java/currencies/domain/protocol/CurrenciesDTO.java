@@ -1,4 +1,4 @@
-package CV.currencies.domain.protocol;
+package currencies.domain.protocol;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

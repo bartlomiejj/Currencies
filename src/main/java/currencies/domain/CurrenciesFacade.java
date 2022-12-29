@@ -1,4 +1,4 @@
-package CV.currencies.domain;
+package currencies.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

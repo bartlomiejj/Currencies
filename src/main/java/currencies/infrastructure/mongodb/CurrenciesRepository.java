@@ -1,4 +1,4 @@
-package CV.currencies.infrastructure.mongodb;
+package currencies.infrastructure.mongodb;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
-package CV.currencies.infrastructure.provider.NBP.protocol;
+package currencies.infrastructure.provider.NBPprovider.protocol;
 
-import CV.currencies.infrastructure.provider.protocol.ProviderResponse;
+import currencies.infrastructure.provider.protocol.ProviderResponse;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -22,10 +22,10 @@ public class NBPResponse extends ProviderResponse {
         public Collection<Currency> rates = new HashSet<>();
 
     @Override
-    public Collection<CV.currencies.shared.Currency> getCurrencies() {
+    public Collection<currencies.shared.Currency> getCurrencies() {
         return rates.stream()
                 .filter(Objects::nonNull)
-                .map(nbpRate -> new CV.currencies.shared.Currency(nbpRate.currency, nbpRate.code, nbpRate.mid))
+                .map(nbpRate -> new currencies.shared.Currency(nbpRate.currency, nbpRate.code, nbpRate.mid))
                 .collect(Collectors.toSet());
     }
 

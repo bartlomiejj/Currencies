@@ -1,9 +1,9 @@
 package CV.currencies.endpoint.api
 
-import CV.currencies.infrastructure.mongodb.CurrenciesDocument
-import CV.currencies.infrastructure.mongodb.CurrenciesRepository
-import CV.currencies.infrastructure.provider.NBP.protocol.NBPResponse
-import CV.currencies.shared.Currency
+import currencies.infrastructure.mongodb.CurrenciesDocument
+import currencies.infrastructure.mongodb.CurrenciesRepository
+import currencies.infrastructure.provider.NBPprovider.protocol.NBPResponse
+import currencies.shared.Currency
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.client.RestClientException
 

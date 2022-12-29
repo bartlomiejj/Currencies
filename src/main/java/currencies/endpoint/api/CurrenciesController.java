@@ -1,6 +1,6 @@
-package CV.currencies.endpoint.api;
+package currencies.endpoint.api;
 
-import CV.currencies.domain.CurrenciesFacade;
+import currencies.domain.CurrenciesFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

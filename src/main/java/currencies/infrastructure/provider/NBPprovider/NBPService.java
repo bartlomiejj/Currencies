@@ -1,10 +1,9 @@
-package CV.currencies.infrastructure.provider.NBP;
+package currencies.infrastructure.provider.NBPprovider;
 
-import CV.currencies.infrastructure.provider.NBP.protocol.NBPResponse;
-import CV.currencies.infrastructure.provider.ProviderConfig;
-import CV.currencies.infrastructure.provider.ProviderService;
-import CV.currencies.infrastructure.provider.protocol.ProviderResponse;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import currencies.infrastructure.provider.NBPprovider.protocol.NBPResponse;
+import currencies.infrastructure.provider.ProviderConfig;
+import currencies.infrastructure.provider.ProviderService;
+import currencies.infrastructure.provider.protocol.ProviderResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -20,7 +19,6 @@ import java.util.Objects;
 public class NBPService implements ProviderService {
 
     private final RestTemplate restTemplate;
-    private final ObjectMapper objectMapper;
     private final ProviderConfig providerConfig;
 
     @Override

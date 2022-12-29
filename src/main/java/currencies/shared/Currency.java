@@ -1,4 +1,4 @@
-package CV.currencies.shared;
+package currencies.shared;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

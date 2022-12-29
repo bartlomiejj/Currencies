@@ -1,10 +1,10 @@
-package CV.currencies.domain;
+package currencies.domain;
 
-import CV.currencies.domain.protocol.CurrenciesDTO;
-import CV.currencies.domain.protocol.CurrenciesMapper;
-import CV.currencies.infrastructure.mongodb.CurrenciesDocument;
-import CV.currencies.infrastructure.mongodb.CurrenciesRepository;
-import CV.currencies.infrastructure.provider.NBP.NBPService;
+import currencies.domain.protocol.CurrenciesDTO;
+import currencies.domain.protocol.CurrenciesMapper;
+import currencies.infrastructure.mongodb.CurrenciesDocument;
+import currencies.infrastructure.mongodb.CurrenciesRepository;
+import currencies.infrastructure.provider.NBPprovider.NBPService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

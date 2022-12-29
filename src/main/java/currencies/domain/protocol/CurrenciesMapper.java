@@ -1,8 +1,8 @@
-package CV.currencies.domain.protocol;
+package currencies.domain.protocol;
 
-import CV.currencies.infrastructure.mongodb.CurrenciesDocument;
-import CV.currencies.infrastructure.provider.protocol.ProviderResponse;
-import CV.currencies.shared.Currency;
+import currencies.infrastructure.mongodb.CurrenciesDocument;
+import currencies.infrastructure.provider.protocol.ProviderResponse;
+import currencies.shared.Currency;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

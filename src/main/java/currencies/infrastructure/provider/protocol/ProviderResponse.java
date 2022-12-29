@@ -1,6 +1,6 @@
-package CV.currencies.infrastructure.provider.protocol;
+package currencies.infrastructure.provider.protocol;
 
-import CV.currencies.shared.Currency;
+import currencies.shared.Currency;
 
 import java.util.Collection;
 
