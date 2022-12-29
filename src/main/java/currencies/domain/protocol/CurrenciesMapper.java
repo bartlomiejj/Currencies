@@ -1,5 +1,6 @@
 package currencies.domain.protocol;
 
+import currencies.endpoint.api.protocol.CalculateRequest;
 import currencies.infrastructure.mongodb.CurrenciesDocument;
 import currencies.infrastructure.provider.protocol.ProviderResponse;
 import currencies.shared.Currency;
@@ -31,4 +32,5 @@ public interface CurrenciesMapper {
     @Mapping(target = "id", ignore = true)
     CurrenciesDocument updateDocument(@MappingTarget CurrenciesDocument currenciesDocument, CurrenciesDTO currenciesDTO);
 
+    CalculateDTO mapToDto(CalculateRequest calculateRequest);
 }
