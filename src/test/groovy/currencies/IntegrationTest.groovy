@@ -1,4 +1,4 @@
-package CV.currencies.endpoint.api
+package currencies
 
 
 import com.fasterxml.jackson.databind.ObjectMapper

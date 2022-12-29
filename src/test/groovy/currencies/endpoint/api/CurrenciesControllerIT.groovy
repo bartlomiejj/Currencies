@@ -1,5 +1,6 @@
-package CV.currencies.endpoint.api
+package currencies.endpoint.api
 
+import currencies.IntegrationTest
 import currencies.infrastructure.mongodb.CurrenciesDocument
 import currencies.infrastructure.mongodb.CurrenciesRepository
 import currencies.infrastructure.provider.NBPprovider.protocol.NBPResponse
