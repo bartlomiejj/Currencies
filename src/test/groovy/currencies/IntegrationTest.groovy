@@ -1,6 +1,5 @@
 package currencies
 
-
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired

@@ -2,7 +2,7 @@ package currencies.domain.protocol;
 
 import currencies.endpoint.api.protocol.CalculateRequest;
 import currencies.infrastructure.mongodb.CurrenciesDocument;
-import currencies.infrastructure.provider.protocol.ProviderResponse;
+import currencies.infrastructure.provider.protocol.AbstractProviderResponse;
 import currencies.shared.Currency;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -17,13 +17,13 @@ import java.util.stream.Collectors;
 public interface CurrenciesMapper {
     CurrenciesMapper INSTANCE = Mappers.getMapper(CurrenciesMapper.class);
 
-    default CurrenciesDTO mapToDto(ProviderResponse providerResponse) {
-        return new CurrenciesDTO(mapCurrencies(providerResponse));
+    default CurrenciesDTO mapToDto(AbstractProviderResponse abstractProviderResponse) {
+        return new CurrenciesDTO(mapCurrencies(abstractProviderResponse));
     }
 
-    default HashSet<CurrenciesDTO.Currency> mapCurrencies(ProviderResponse providerResponse) {
-        return providerResponse.getCurrencies().stream()
-                .map(currency -> mapCurrency(currency, providerResponse.getLastUpdated(), providerResponse.getSource()))
+    default HashSet<CurrenciesDTO.Currency> mapCurrencies(AbstractProviderResponse abstractProviderResponse) {
+        return abstractProviderResponse.getCurrencies().stream()
+                .map(currency -> mapCurrency(currency, abstractProviderResponse.getLastUpdated(), abstractProviderResponse.getSource()))
                 .collect(Collectors.toCollection(HashSet::new));
     }
 

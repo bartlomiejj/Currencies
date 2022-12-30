@@ -8,9 +8,9 @@ import java.math.BigDecimal;
 @Data
 public class CalculateRequest {
     @NotNull
-    public BigDecimal sourceValue;
+    private BigDecimal sourceValue;
     @NotNull
-    public String sourceCurrency;
+    private String sourceCurrency;
     @NotNull
-    public String targetCurrency;
+    private String targetCurrency;
 }

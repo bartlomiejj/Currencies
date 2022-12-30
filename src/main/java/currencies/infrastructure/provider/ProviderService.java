@@ -1,8 +1,8 @@
 package currencies.infrastructure.provider;
 
-import currencies.infrastructure.provider.protocol.ProviderResponse;
+import currencies.infrastructure.provider.protocol.AbstractProviderResponse;
 
 public interface ProviderService {
 
-    ProviderResponse getCurrencies();
+    AbstractProviderResponse getCurrencies();
 }

@@ -14,10 +14,10 @@ public class CurrenciesDTO {
 
     @Data
     public static class Currency {
-        public String name;
-        public String code;
-        public BigDecimal mid;
-        public String lastUpdated;
-        public String source;
+        private String name;
+        private String code;
+        private BigDecimal mid;
+        private String lastUpdated;
+        private String source;
     }
 }

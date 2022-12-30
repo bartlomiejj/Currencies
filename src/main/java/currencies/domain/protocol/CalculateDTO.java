@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 @Data
 public class CalculateDTO {
-    public BigDecimal sourceValue;
-    public String sourceCurrency;
-    public String targetCurrency;
+    private BigDecimal sourceValue;
+    private String sourceCurrency;
+    private String targetCurrency;
 }

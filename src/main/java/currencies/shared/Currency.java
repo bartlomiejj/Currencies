@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Currency {
-    public String name;
-    public String code;
-    public BigDecimal mid;
+    private String name;
+    private String code;
+    private BigDecimal mid;
 }

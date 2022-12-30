@@ -7,6 +7,7 @@ import currencies.infrastructure.provider.NBPprovider.protocol.NBPResponse
 import currencies.shared.Currency
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.client.RestClientException
+import org.springframework.web.util.NestedServletException
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
@@ -74,7 +75,7 @@ class CurrenciesControllerIT extends IntegrationTest {
             exampleDocCurrency.source == NBP_SOURCE
     }
 
-    def "should not update document when no response from provider"() {
+    def "should throw exception not update document when no response from provider"() {
         given:
             def savedCurrency = saveBasicCurrenciesDocument()
             def exampleSavedCurrency = savedCurrency.currencies.find(
@@ -82,9 +83,11 @@ class CurrenciesControllerIT extends IntegrationTest {
         when:
             restTemplate.getForObject(_, _) >> { it -> throw new RestClientException("message") }
 
-            mockMvc.perform(put(REFRESH)).andExpect(status().isOk())
+            mockMvc.perform(put(REFRESH)).andExpect(status().is5xxServerError())
 
         then:
+//            thrown(ProviderServiceException.class)
+            thrown(NestedServletException.class)
             def documents = currencyRepository.findAll()
             documents.size() == 1
             documents[0].currencies.size() == savedCurrency.currencies.size()

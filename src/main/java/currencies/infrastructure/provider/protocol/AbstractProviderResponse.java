@@ -4,7 +4,7 @@ import currencies.shared.Currency;
 
 import java.util.Collection;
 
-public abstract class ProviderResponse {
+public abstract class AbstractProviderResponse {
 
     public abstract Collection<Currency> getCurrencies();
     public abstract String getLastUpdated();
