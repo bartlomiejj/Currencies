@@ -7,22 +7,23 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.HashSet;
 
 @Document
 @Data
 public class CurrenciesDocument {
 
     @MongoId
-    public ObjectId id;
+    private ObjectId id;
 
-    public Collection<Currency> currencies;
+    private Collection<Currency> currencies = new HashSet<>();
 
     @Data
     public static class Currency {
-        public String name;
-        public String code;
-        public BigDecimal mid;
-        public String lastUpdated;
-        public String source;
+        private String name;
+        private String code;
+        private BigDecimal mid;
+        private String lastUpdated;
+        private String source;
     }
 }

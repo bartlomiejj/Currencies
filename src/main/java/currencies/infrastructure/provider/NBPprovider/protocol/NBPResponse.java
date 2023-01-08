@@ -1,6 +1,6 @@
 package currencies.infrastructure.provider.NBPprovider.protocol;
 
-import currencies.infrastructure.provider.protocol.ProviderResponse;
+import currencies.infrastructure.provider.protocol.AbstractProviderResponse;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class NBPResponse extends ProviderResponse {
+public class NBPResponse extends AbstractProviderResponse {
 
     private static final String NBP_SOURCE = "NBP";
 
-        public String table;
-        public String no;
-        public String effectiveDate;
-        public Collection<Currency> rates = new HashSet<>();
+    private String table;
+    private String no;
+    private String effectiveDate;
+    private Collection<Currency> rates = new HashSet<>();
 
     @Override
     public Collection<currencies.shared.Currency> getCurrencies() {
@@ -41,8 +41,8 @@ public class NBPResponse extends ProviderResponse {
 
     @Data
     public static class Currency {
-        public String currency;
-        public String code;
-        public BigDecimal mid;
+        private String currency;
+        private String code;
+        private BigDecimal mid;
     }
 }

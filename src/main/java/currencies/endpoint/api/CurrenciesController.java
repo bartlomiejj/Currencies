@@ -1,17 +1,26 @@
 package currencies.endpoint.api;
 
 import currencies.domain.CurrenciesFacade;
+import currencies.domain.protocol.CurrenciesMapper;
+import currencies.endpoint.api.protocol.CalculateRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.math.BigDecimal;
 
 @RestControllerAdvice
-@RequestMapping("/api/currencies")
 @RequiredArgsConstructor
+@RequestMapping("/api/currencies")
 public class CurrenciesController {
 
     private final CurrenciesFacade currenciesFacade;
+
+    @PostMapping("/calculate")
+    public ResponseEntity<BigDecimal> calculateCurrency(@RequestBody @Valid CalculateRequest calculateRequest) {
+        return ResponseEntity.ok(currenciesFacade.calculate(CurrenciesMapper.INSTANCE.mapToDto(calculateRequest)));
+    }
 
     @PutMapping("/refresh")
     public void refreshCurrency(){
