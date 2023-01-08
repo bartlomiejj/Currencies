@@ -11,8 +11,8 @@ import javax.validation.Valid;
 import java.math.BigDecimal;
 
 @RestControllerAdvice
-@RequestMapping("/api/currencies")
 @RequiredArgsConstructor
+@RequestMapping("/api/currencies")
 public class CurrenciesController {
 
     private final CurrenciesFacade currenciesFacade;
