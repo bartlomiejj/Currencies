@@ -1,7 +1,9 @@
+THIS IS JUST AN EXAMPLE, PORTFOLIO PROJECT. BUSINESS VALUE MIGHT BE LOW :) 
+
 # Currencies Service
 
 Responsibilities:
-1. api/currencies/refresh - download currencies from NBP and save in DB
+1. api/currencies/refresh - download currencies from NBP and save in DB. Refresh on every application startup also. 
 2. api/currencies/calculate - calculate target currency value. 
 
 Example request:
